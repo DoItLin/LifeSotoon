@@ -10,11 +10,15 @@ class out_comes(models.Model):
     date=models.DateTimeField()
     amount=models.BigIntegerField()
     user=models.ForeignKey(User ,on_delete=models.CASCADE)
-
-
+    def __str__(self):
+        return "در روز{}. مبلغ {} خرج کردی".format(self.date ,self.amount)
+  
 #How much that i get money today and how I reach it ? 
 class in_comes(models.Model):
     text=models.CharField( max_length=250)
     date=models.DateTimeField()
     amount=models.BigIntegerField()
     user=models.ForeignKey(User,on_delete=models.CASCADE) 
+    def __str__(self):
+        return "در روز{}. مبلغ {} بدست آوردی.".format(self.date ,self.amount)
+ 
