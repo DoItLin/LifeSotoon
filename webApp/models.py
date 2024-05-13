@@ -2,6 +2,12 @@ from django.db import models
 from django.contrib.auth.models import User
 # Create your models here.
 
+#Token for athuriseing 
+class Token(models.Model):
+    user=models.OneToOneField(User, on_delete=models.CASCADE)
+    token=models.CharField(max_length=128)
+    def __str__(self):
+        return "The {}'s token is: {}".format(self.user,self.token)
 
 #How much that i spent money today and for what? 
 class out_comes(models.Model):
