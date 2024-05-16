@@ -4,7 +4,7 @@ from json import JSONEncoder
 from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse
 from django.utils import timezone
-from models import User, out_comes ,in_comes# Ensure these models are imported correctly
+from . models import User, out_comes ,in_comes# Ensure these models are imported correctly
 
 @csrf_exempt 
 def submit_expense(request):
